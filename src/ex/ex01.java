@@ -18,6 +18,7 @@ public class ex01 {
 		// TODO Auto-generated method stub
 		Scanner scn = new Scanner(System.in);
 		Random randnum = new Random();
+		//
 		int n = scn.nextInt();
 		randnum.setSeed(n);
 		int data[] = new int[6];
@@ -25,7 +26,7 @@ public class ex01 {
 			data[i] = randnum.nextInt(42) + 1;
 			for (int j = 0; j < i; j++) {
 				if (data[i] == data[j]) {
-					data[i] = randnum.nextInt(42) + 1;
+					i=i-1;
 				}
 			}
 		}
