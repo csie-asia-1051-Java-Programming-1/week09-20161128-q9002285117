@@ -15,22 +15,30 @@ public class hw01 {
 		Scanner scn = new Scanner(System.in);
 		int n = scn.nextInt();
 		int sum = 0;
-		while (true) {
-			for (int i = 1; i < n; i++) {
-				sum = 0;
-				for (int j = 1; j < n; j++) {
-					sum = sum + j;
-					if (sum == n) {
-						System.out.print("=");
-						for (int k = i; k <=j; k++) {
-							System.out.print(k+"+");
-						}
-						System.out.print(" ");
-						
-					}
-				}
-			}break;
-		}
+		int o = 0;
+		fun1(n, sum, o);
 	}
 
+	public static void fun1(int a, int b, int c) {
+		for (int i = 1; i < a; i++) {
+			c = 1;
+			b = 0;
+			for (int j = i; j < a; j++) {
+				b = b + j;
+				if (b == a) {
+					System.out.print("=");
+					for (int k = i; k <= j; k++) {
+						System.out.print(k);
+						if (k < j) {
+							System.out.print("+");
+						}
+					}
+					System.out.println();
+				}
+			}
+		}
+		if (c == 0) {
+			System.out.println("NO");
+		}
+	}
 }
